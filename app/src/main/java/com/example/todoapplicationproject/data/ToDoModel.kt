@@ -9,7 +9,8 @@ data class ToDoModel(
     val title:String,
     val description:String,
     val date:Int,
-    val checkBox: Boolean,
+    var checkBox: Boolean,
+    var category: String,
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0
 )
