@@ -1,9 +1,8 @@
-package com.example.todoapplicationproject
+package com.example.todoapplicationproject.mainActivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Spinner
+import com.example.todoapplicationproject.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

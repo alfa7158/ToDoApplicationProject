@@ -45,7 +45,7 @@
         android:id="@+id/floatingActionButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="F6D04D"
+        android:backgroundTint="#F6D04D"
         android:clickable="true"
         android:src="@android:drawable/ic_input_add"
         app:backgroundTint="#9F1F1F"

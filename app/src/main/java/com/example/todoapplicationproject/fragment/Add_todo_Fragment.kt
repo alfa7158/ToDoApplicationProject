@@ -1,12 +1,20 @@
 package com.example.todoapplicationproject.fragment
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
+import android.icu.text.SimpleDateFormat
+import android.icu.util.Calendar
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
+import android.widget.TextView
+import androidx.annotation.RequiresApi
 import com.example.todoapplicationproject.R
 
 
@@ -24,6 +32,7 @@ class Add_todo_Fragment : Fragment() {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: android.view.View, savedInstanceState: android.os.Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        val spinnerCategories = listOf("Important", "Mid-important", "less-Important")
@@ -33,6 +42,36 @@ class Add_todo_Fragment : Fragment() {
 
         val spinner: Spinner = view.findViewById(R.id.spinner4)
 
+        val mPickTimeBtn = view.findViewById<Button>(R.id.pickTimeBtn)
+        val textView     = view.findViewById<TextView>(R.id.timeTv)
+        val DatePicker = view.findViewById<Button>(R.id.pickDateBtn)
+        val DatetextView     = view.findViewById<TextView>(R.id.dateTv)
+
+        mPickTimeBtn.setOnClickListener {
+            val cal = Calendar.getInstance()
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
+                cal.set(Calendar.HOUR_OF_DAY, hour)
+                cal.set(Calendar.MINUTE, minute)
+                textView.text = SimpleDateFormat("HH:mm").format(cal.time)
+            }
+            TimePickerDialog(context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+        }
+
+
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        DatePicker.setOnClickListener {
+
+            val dpd = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                // Display Selected date in TextView
+                DatetextView.setText("" + dayOfMonth + "/" + month + "/ " + year)
+            }, year, month, day)
+            dpd.show()
+
+        }
 
 
 //        val spinnerArrayAdapter = ArrayAdapter(

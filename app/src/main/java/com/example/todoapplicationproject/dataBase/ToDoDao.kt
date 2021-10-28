@@ -1,5 +1,6 @@
 package com.example.todoapplicationproject.dataBase
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.todoapplicationproject.data.ToDoModel
 import kotlinx.coroutines.selects.select
@@ -9,7 +10,7 @@ interface ToDoDao {
 @Insert
 suspend fun addToDo(toDoModel: ToDoModel)
 @Query( "SELECT*FROM todomodel")
-suspend fun getTodo(toDoModel: ToDoModel)
+ fun getTodo():LiveData<List<ToDoModel>>
 
 @Update
 suspend fun updateToDo(toDoModel: ToDoModel)
