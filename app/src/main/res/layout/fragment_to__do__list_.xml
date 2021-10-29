@@ -8,6 +8,7 @@
     tools:context=".fragment.To_Do_List_Fragment" >
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/toDo_Recyclerview"
         android:layout_width="409dp"
         android:layout_height="729dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

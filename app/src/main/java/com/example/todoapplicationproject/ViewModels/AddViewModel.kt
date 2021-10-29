@@ -14,7 +14,10 @@ var todoTasks = todoRepoistory.getTasks()
 
 var selectedLiveData = MutableLiveData<ToDoModel>()
 
-fun addToDO(title:String, description:String, date:String, isChecked:Boolean, categories:String,time:Double)   {
+fun addToDO(
+    title:String, description:String, date:String, isChecked:Boolean, categories:String,
+    time: String
+)   {
 
     viewModelScope.launch {
         todoRepoistory.addTasks(

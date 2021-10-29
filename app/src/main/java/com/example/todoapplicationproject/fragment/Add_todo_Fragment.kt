@@ -12,15 +12,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.activityViewModels
 import com.example.todoapplicationproject.R
-
-
-
+import com.example.todoapplicationproject.ViewModels.AddViewModel
+import com.example.todoapplicationproject.data.ToDoModel
 
 
 class Add_todo_Fragment : Fragment() {
-
+    private lateinit var selectedTasks: ToDoModel
+    private val addViewModel: AddViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,13 +40,13 @@ class Add_todo_Fragment : Fragment() {
 
         val spinner:Spinner = view.findViewById(R.id.spinner4)
         val mPickTimeBtn = view.findViewById<Button>(R.id.pickTimeBtn)
-        val textView   = view.findViewById<TextView>(R.id.timeTv)
+        val textViewTime   = view.findViewById<TextView>(R.id.timeTv)
         val DatePicker = view.findViewById<Button>(R.id.pickDateBtn)
         val DatetextView  = view.findViewById<TextView>(R.id.dateTv)
         val saveButton:Button = view.findViewById(R.id.save_button)
         val titleEditText:EditText = view.findViewById(R.id.titleEditText)
         val descriptionEditText:EditText = view.findViewById(R.id.decriptionEditText)
-
+        val isDoneCheckBox:CheckBox = view.findViewById(R.id.checkBoxView)
 
 
         mPickTimeBtn.setOnClickListener {
@@ -54,7 +54,7 @@ class Add_todo_Fragment : Fragment() {
             val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
                 cal.set(Calendar.HOUR_OF_DAY, hour)
                 cal.set(Calendar.MINUTE, minute)
-                textView.text = SimpleDateFormat("HH:mm").format(cal.time)
+                textViewTime.text = SimpleDateFormat("HH:mm").format(cal.time)
             }
             TimePickerDialog(context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
         }
@@ -74,12 +74,30 @@ class Add_todo_Fragment : Fragment() {
 
         }
 
+//            var title:String,
+//    var description:String,
+//    var checkBox: Boolean,
+//    val date:String,
+//    var category: String,
+//    var time:Double,
         saveButton.setOnClickListener(){
             val title = titleEditText.text.toString()
-            val description = descriptionEditText.text.toString()
-            val spinnerChose = spinner.toString()
+            val  description = descriptionEditText.text.toString()
+            val isdone = isDoneCheckBox.isChecked
+            val date = DatetextView.text.toString()
+            val spiner = spinner.toString()
+            val time = textViewTime.text.toString()
 
-            }
+
+
+            addViewModel.addToDO(title, description, date,isdone,spiner,time)
+
+        }
+
+
+
+
+
 
 
 

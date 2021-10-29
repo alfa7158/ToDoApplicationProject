@@ -8,10 +8,10 @@ import androidx.room.PrimaryKey
 data class ToDoModel(
     var title:String,
     var description:String,
-    val date:String,
     var checkBox: Boolean,
+    val date:String,
     var category: String,
-    var time:Double,
+    var time:String,
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0
 )
