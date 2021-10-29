@@ -10,11 +10,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.navigation.fragment.findNavController
 import com.example.todoapplicationproject.R
 
 
@@ -40,12 +38,16 @@ class Add_todo_Fragment : Fragment() {
 //            ArrayAdapter(this, android.R.layout.simple_spinner_item, )
 
 
-        val spinner: Spinner = view.findViewById(R.id.spinner4)
-
+        val spinner:Spinner = view.findViewById(R.id.spinner4)
         val mPickTimeBtn = view.findViewById<Button>(R.id.pickTimeBtn)
-        val textView     = view.findViewById<TextView>(R.id.timeTv)
+        val textView   = view.findViewById<TextView>(R.id.timeTv)
         val DatePicker = view.findViewById<Button>(R.id.pickDateBtn)
-        val DatetextView     = view.findViewById<TextView>(R.id.dateTv)
+        val DatetextView  = view.findViewById<TextView>(R.id.dateTv)
+        val saveButton:Button = view.findViewById(R.id.save_button)
+        val titleEditText:EditText = view.findViewById(R.id.titleEditText)
+        val descriptionEditText:EditText = view.findViewById(R.id.decriptionEditText)
+
+
 
         mPickTimeBtn.setOnClickListener {
             val cal = Calendar.getInstance()
@@ -66,12 +68,21 @@ class Add_todo_Fragment : Fragment() {
         DatePicker.setOnClickListener {
 
             val dpd = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                // Display Selected date in TextView
                 DatetextView.setText("" + dayOfMonth + "/" + month + "/ " + year)
             }, year, month, day)
             dpd.show()
 
         }
+
+        saveButton.setOnClickListener(){
+            val title = titleEditText.text.toString()
+            val description = descriptionEditText.text.toString()
+            val spinnerChose = spinner.toString()
+
+            }
+
+
+
 
 
 //        val spinnerArrayAdapter = ArrayAdapter(

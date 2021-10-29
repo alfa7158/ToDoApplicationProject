@@ -13,6 +13,7 @@ class TodDoRepoistory(context: Context) {
     ).fallbackToDestructiveMigration().build()
 
    private val toDoDao = database.toDoDao()
+    fun getTasks() = toDoDao.getTodo()
 
     suspend fun addTasks(toDoModel: ToDoModel) = toDoDao.addToDo(toDoModel)
     suspend fun updateTasks(toDoModel: ToDoModel) = toDoDao.updateToDo(toDoModel)

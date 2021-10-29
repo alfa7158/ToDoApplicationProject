@@ -8,7 +8,6 @@
     tools:context=".fragment.To_do_text_Fragment">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="right"
@@ -24,18 +23,31 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_conversion_absoluteHeight="19dp"
-            tools:layout_conversion_absoluteWidth="58dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="58dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" />
+
+            <TextView
+                android:id="@+id/descripTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </LinearLayout>
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/DeleteImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -47,7 +59,7 @@
             tools:layout_editor_absoluteY="0dp" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/editeImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -58,7 +70,7 @@
             tools:layout_editor_absoluteY="0dp" />
 
         <it.emperor.animatedcheckbox.AnimatedCheckBox
-            android:id="@+id/animatedcheckbox"
+            android:id="@+id/checkBoxView"
             android:layout_width="60dp"
             android:layout_height="60dp"
             app:acb_animation_duration="500"

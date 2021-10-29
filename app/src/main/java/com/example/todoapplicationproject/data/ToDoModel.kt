@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class ToDoModel(
-    val title:String,
-    val description:String,
+    var title:String,
+    var description:String,
     val date:String,
     var checkBox: Boolean,
     var category: String,

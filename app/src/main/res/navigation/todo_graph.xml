@@ -33,10 +33,26 @@
         <action
             android:id="@+id/action_to_do_text_Fragment_to_main_select_Fragment"
             app:destination="@id/main_select_Fragment" />
+        <action
+            android:id="@+id/action_to_do_text_Fragment_to_deletFragment"
+            app:destination="@id/deletFragment" />
+        <action
+            android:id="@+id/action_to_do_text_Fragment_to_editFragment"
+            app:destination="@id/editFragment" />
     </fragment>
     <fragment
         android:id="@+id/to_Do_List_Fragment"
         android:name="com.example.todoapplicationproject.fragment.To_Do_List_Fragment"
         android:label="fragment_to__do__list_"
         tools:layout="@layout/fragment_to__do__list_" />
+    <fragment
+        android:id="@+id/deletFragment"
+        android:name="com.example.todoapplicationproject.fragment.DeletFragment"
+        android:label="fragment_delet"
+        tools:layout="@layout/fragment_delet" />
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.todoapplicationproject.fragment.editFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" />
 </navigation>
