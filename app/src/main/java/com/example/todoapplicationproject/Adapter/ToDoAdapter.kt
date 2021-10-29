@@ -37,7 +37,7 @@ class ToDoAdapter(val tasks: List<ToDoModel>,
         holder.isDone.setOnClickListener() {
 
             theTasks.checkBox = holder.isDone.isChecked
-            viewModel.updateItem(theTasks)
+            viewModel.updateTask(theTasks)
 
         }
 
@@ -51,15 +51,6 @@ class ToDoAdapter(val tasks: List<ToDoModel>,
             it.findNavController().navigate(R.id.action_to_do_text_Fragment_to_deletFragment)
 
         }
-
-
-
-
-
-
-
-
-
 
 
 

@@ -7,7 +7,7 @@ import com.example.todoapplicationproject.data.ToDoModel
 import com.example.todoapplicationproject.repoistries.TodDoRepoistory
 import kotlinx.coroutines.launch
 
-class TODoViewModelAddtToDO:ViewModel() {
+class AddViewModel:ViewModel() {
 private val todoRepoistory = TodDoRepoistory.getInstance()
 
 var todoTasks = todoRepoistory.getTasks()

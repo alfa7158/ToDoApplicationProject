@@ -7,18 +7,16 @@ import com.example.todoapplicationproject.data.ToDoModel
 import com.example.todoapplicationproject.repoistries.TodDoRepoistory
 import kotlinx.coroutines.launch
 
-class ToDoViewModelAdapter:ViewModel() {
-
+class DeleteViewModel : ViewModel() {
     private val todoRepoistory = TodDoRepoistory.getInstance()
 
     var todoTasks = todoRepoistory.getTasks()
 
     var selectedLiveData = MutableLiveData<ToDoModel>()
 
-    fun updateTask(toDoModel: ToDoModel) {
-
+    fun deleteTask(toDoModel: ToDoModel) {
         viewModelScope.launch {
-            todoRepoistory.updateTasks(toDoModel)
+            todoRepoistory.deleteTasks(toDoModel)
         }
     }
 

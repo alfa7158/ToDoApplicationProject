@@ -7,7 +7,7 @@ import com.example.todoapplicationproject.data.ToDoModel
 import com.example.todoapplicationproject.repoistries.TodDoRepoistory
 import kotlinx.coroutines.launch
 
-class ToDoViewModelAdapter:ViewModel() {
+class EditViewModel:ViewModel() {
 
     private val todoRepoistory = TodDoRepoistory.getInstance()
 
@@ -21,6 +21,5 @@ class ToDoViewModelAdapter:ViewModel() {
             todoRepoistory.updateTasks(toDoModel)
         }
     }
-
 
 }

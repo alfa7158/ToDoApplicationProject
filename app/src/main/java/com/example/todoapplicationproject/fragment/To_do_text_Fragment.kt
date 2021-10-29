@@ -9,7 +9,6 @@ import com.example.todoapplicationproject.R
 
 
 class To_do_text_Fragment : Fragment() {
-    // TODO: Rename and change types of parameters
 
 
     override fun onCreateView(
