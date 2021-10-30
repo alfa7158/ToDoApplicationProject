@@ -51,7 +51,7 @@ class editFragment : Fragment() {
 
         editButton.setOnClickListener(){
             editViewModel.updateTask(selectedTasks)
-            findNavController().navigate(R.id.action_add_todo_Fragment_to_to_Do_List_Fragment)
+            findNavController().navigate(R.id.action_editFragment_to_to_Do_List_Fragment)
 
         }
 

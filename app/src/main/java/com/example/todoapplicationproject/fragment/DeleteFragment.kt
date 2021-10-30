@@ -54,7 +54,7 @@ class DeleteFragment : Fragment() {
 
         deleteButton.setOnClickListener(){
             deleteViewModel.deleteTask(selectedTasks)
-            findNavController().navigate(R.id.action_add_todo_Fragment_to_to_Do_List_Fragment)
+            findNavController().navigate(R.id.action_deletFragment_to_to_Do_List_Fragment)
 
         }
 
