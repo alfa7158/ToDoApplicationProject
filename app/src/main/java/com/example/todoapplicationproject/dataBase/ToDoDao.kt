@@ -9,8 +9,8 @@ import kotlinx.coroutines.selects.select
 interface ToDoDao {
 @Insert
 suspend fun addToDo(toDoModel: ToDoModel)
-@Query( "SELECT*FROM todomodel")
- fun getTodo():LiveData<List<ToDoModel>>
+@Query( "SELECT*FROM todomodel WHERE category = :category")
+ fun getTodo(category: String):LiveData<List<ToDoModel>>
 
 @Update
 suspend fun updateToDo(toDoModel: ToDoModel)

@@ -8,32 +8,31 @@
     tools:context=".fragment.To_do_text_Fragment">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right"
+        android:layout_width="411dp"
+        android:layout_height="307dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="291dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="13dp"
+            android:paddingTop="5dp">
 
             <TextView
                 android:id="@+id/titleTextView"
+                style="@style/Widget.AppCompat.TextView"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:fontFamily="@font/farsan"
+                android:text="title"
+                android:textColor="#000000"
+                android:textSize="33dp"
                 tools:layout_conversion_absoluteHeight="19dp"
                 tools:layout_conversion_absoluteWidth="58dp"
                 tools:layout_editor_absoluteX="0dp"
@@ -41,9 +40,33 @@
 
             <TextView
                 android:id="@+id/descripTextView"
+                style="@style/Widget.MaterialComponents.Snackbar.TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:fontFamily="@font/farsan"
+                android:text="descrip"
+                android:textColor="#000000"
+                android:textSize="33dp" />
+
+            <TextView
+                android:id="@+id/TextViewDate"
+                style="@style/Widget.MaterialComponents.Snackbar.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/farsan"
+                android:text="date"
+                android:textColor="#000000"
+                android:textSize="33dp" />
+
+            <TextView
+                android:id="@+id/timeTextView"
+                style="@android:style/Widget.TextView.SpinnerItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/farsan"
+                android:text="Time"
+                android:textColor="#000000"
+                android:textSize="33dp" />
         </LinearLayout>
 
         <ImageView
@@ -77,12 +100,33 @@
             app:acb_border_checked_color="#000"
             app:acb_border_checked_stroke_width="2dp"
             app:acb_border_not_checked_color="#0f0"
-            app:acb_checked="true"
+            app:acb_checked="false"
             app:acb_circle_color="#f00"
             app:acb_hook_color="#00f"
             app:acb_hook_stroke_width="2dp"
             app:acb_padding="10dp" />
 
+        <ImageView
+            android:id="@+id/faceImageView"
+            android:layout_width="43dp"
+            android:layout_height="35dp"
+            android:layout_weight="0"
+            android:paddingTop="5dp"
+            android:paddingRight="12dp"
+            tools:src="@tools:sample/avatars" />
+
     </LinearLayout>
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="#4CAF50"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

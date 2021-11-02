@@ -10,8 +10,6 @@ import kotlinx.coroutines.launch
 class DeleteViewModel : ViewModel() {
     private val todoRepoistory = TodDoRepoistory.getInstance()
 
-    var todoTasks = todoRepoistory.getTasks()
-
     var selectedLiveData = MutableLiveData<ToDoModel>()
 
     fun deleteTask(toDoModel: ToDoModel) {

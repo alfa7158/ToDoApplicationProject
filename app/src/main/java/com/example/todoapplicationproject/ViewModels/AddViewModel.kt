@@ -7,31 +7,29 @@ import com.example.todoapplicationproject.data.ToDoModel
 import com.example.todoapplicationproject.repoistries.TodDoRepoistory
 import kotlinx.coroutines.launch
 
-class AddViewModel:ViewModel() {
-private val todoRepoistory = TodDoRepoistory.getInstance()
+class AddViewModel : ViewModel() {
+    private val todoRepoistory = TodDoRepoistory.getInstance()
 
-var todoTasks = todoRepoistory.getTasks()
+    var selectedLiveData = MutableLiveData<ToDoModel>()
 
-var selectedLiveData = MutableLiveData<ToDoModel>()
+    fun addToDO(
+        title: String, description: String, isChecked: Boolean, date: String, categories: String,
+        time: String
+    ) {
 
-fun addToDO(
-    title:String, description:String, date:String, isChecked:Boolean, categories:String,
-    time: String
-)   {
-
-    viewModelScope.launch {
-        todoRepoistory.addTasks(
-            ToDoModel(
-            title,
-            description,
-            date,
-            isChecked,
-            categories,
-            time
+        viewModelScope.launch {
+            todoRepoistory.addTasks(
+                ToDoModel(
+                    title,
+                    description,
+                    isChecked,
+                    date,
+                    categories,
+                    time
+                )
             )
-        )
+        }
     }
-}
 
 }
 

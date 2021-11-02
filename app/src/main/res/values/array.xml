@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="periority">
+        <item>Important</item>
+        <item>Mid-Important</item>
+        <item>Less-Important</item>
+    </string-array>
+</resources>

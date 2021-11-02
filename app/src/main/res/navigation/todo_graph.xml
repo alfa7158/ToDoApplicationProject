@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/todo_graph"
-    app:startDestination="@id/to_Do_List_Fragment">
+    app:startDestination="@id/main_select_Fragment">
 
     <fragment
         android:id="@+id/main_select_Fragment"
@@ -48,7 +48,20 @@
         android:id="@+id/to_Do_List_Fragment"
         android:name="com.example.todoapplicationproject.fragment.To_Do_List_Fragment"
         android:label="fragment_to__do__list_"
-        tools:layout="@layout/fragment_to__do__list_" />
+        tools:layout="@layout/fragment_to__do__list_" >
+        <action
+            android:id="@+id/action_to_Do_List_Fragment_to_editFragment"
+            app:destination="@id/editFragment" />
+        <action
+            android:id="@+id/action_to_Do_List_Fragment_to_deletFragment"
+            app:destination="@id/deletFragment" />
+        <action
+            android:id="@+id/action_to_Do_List_Fragment_to_add_todo_Fragment"
+            app:destination="@id/add_todo_Fragment" />
+        <action
+            android:id="@+id/action_to_Do_List_Fragment_to_main_select_Fragment"
+            app:destination="@id/main_select_Fragment" />
+    </fragment>
     <fragment
         android:id="@+id/deletFragment"
         android:name="com.example.todoapplicationproject.fragment.DeleteFragment"

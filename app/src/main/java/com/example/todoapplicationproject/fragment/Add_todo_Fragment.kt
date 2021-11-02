@@ -13,14 +13,19 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.todoapplicationproject.R
 import com.example.todoapplicationproject.ViewModels.AddViewModel
+import com.example.todoapplicationproject.ViewModels.ToDoViewModelAdapter
 import com.example.todoapplicationproject.data.ToDoModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class Add_todo_Fragment : Fragment() {
     private lateinit var selectedTasks: ToDoModel
     private val addViewModel: AddViewModel by activityViewModels()
+    private val listViewModel: ToDoViewModelAdapter by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,8 +51,6 @@ class Add_todo_Fragment : Fragment() {
         val saveButton:Button = view.findViewById(R.id.save_button)
         val titleEditText:EditText = view.findViewById(R.id.titleEditText)
         val descriptionEditText:EditText = view.findViewById(R.id.decriptionEditText)
-        val isDoneCheckBox:CheckBox = view.findViewById(R.id.checkBoxView)
-
 
         mPickTimeBtn.setOnClickListener {
             val cal = Calendar.getInstance()
@@ -60,6 +63,7 @@ class Add_todo_Fragment : Fragment() {
         }
 
 
+
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
@@ -68,11 +72,20 @@ class Add_todo_Fragment : Fragment() {
         DatePicker.setOnClickListener {
 
             val dpd = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                DatetextView.setText("" + dayOfMonth + "/" + month + "/ " + year)
+                c.set(year,monthOfYear,dayOfMonth)
+                DatetextView.setText(SimpleDateFormat("dd/MM/yyyy").format(c.timeInMillis))
+
             }, year, month, day)
             dpd.show()
 
+
         }
+
+
+
+
+
+
 
 //            var title:String,
 //    var description:String,
@@ -80,17 +93,23 @@ class Add_todo_Fragment : Fragment() {
 //    val date:String,
 //    var category: String,
 //    var time:Double,
+
         saveButton.setOnClickListener(){
             val title = titleEditText.text.toString()
             val  description = descriptionEditText.text.toString()
-            val isdone = isDoneCheckBox.isChecked
+            val isdone = false
             val date = DatetextView.text.toString()
-            val spiner = spinner.toString()
+            val spiner = spinner.selectedItem.toString()
             val time = textViewTime.text.toString()
+            if(title.isNotEmpty()&&date.isNotEmpty()&&time.isNotEmpty()&&description.isNotEmpty()){
+
+                addViewModel.addToDO(title, description,isdone,date,spiner,time)
+                listViewModel.selectedCategory = spinner.selectedItem.toString()
+                findNavController().navigate(R.id.action_add_todo_Fragment_to_to_Do_List_Fragment)
+
+            }
 
 
-
-            addViewModel.addToDO(title, description, date,isdone,spiner,time)
 
         }
 

@@ -7,13 +7,13 @@ import com.example.todoapplicationproject.data.ToDoModel
 import com.example.todoapplicationproject.dataBase.ToDoDatabase
 import java.lang.Exception
 
-private const val Database_toDo = "todo"
+private const val Database_toDo = "todov1"
 class TodDoRepoistory(context: Context) {
     private val database:ToDoDatabase = Room.databaseBuilder(context,ToDoDatabase::class.java, Database_toDo
     ).fallbackToDestructiveMigration().build()
 
    private val toDoDao = database.toDoDao()
-    fun getTasks() = toDoDao.getTodo()
+    fun getTasks(category: String) = toDoDao.getTodo(category)
 
     suspend fun addTasks(toDoModel: ToDoModel) = toDoDao.addToDo(toDoModel)
     suspend fun updateTasks(toDoModel: ToDoModel) = toDoDao.updateToDo(toDoModel)

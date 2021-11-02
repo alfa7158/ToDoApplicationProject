@@ -11,7 +11,8 @@ class ToDoViewModelAdapter:ViewModel() {
 
     private val todoRepoistory = TodDoRepoistory.getInstance()
 
-    var todoTasks = todoRepoistory.getTasks()
+    var selectedCategory = ""
+    fun todoTasks(category: String) = todoRepoistory.getTasks(category)
 
     var selectedLiveData = MutableLiveData<ToDoModel>()
 
@@ -19,6 +20,11 @@ class ToDoViewModelAdapter:ViewModel() {
 
         viewModelScope.launch {
             todoRepoistory.updateTasks(toDoModel)
+        }
+    }
+    fun deleteTask(toDoModel: ToDoModel) {
+        viewModelScope.launch {
+            todoRepoistory.deleteTasks(toDoModel)
         }
     }
 

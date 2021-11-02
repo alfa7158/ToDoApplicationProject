@@ -14,12 +14,13 @@ import androidx.navigation.fragment.findNavController
 import com.example.todoapplicationproject.R
 import com.example.todoapplicationproject.ViewModels.DeleteViewModel
 import com.example.todoapplicationproject.ViewModels.EditViewModel
+import com.example.todoapplicationproject.ViewModels.ToDoViewModelAdapter
 import com.example.todoapplicationproject.data.ToDoModel
 
 
 class DeleteFragment : Fragment() {
     private lateinit var selectedTasks: ToDoModel
-    private val deleteViewModel: DeleteViewModel by activityViewModels()
+    private val deleteViewModel: ToDoViewModelAdapter by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +37,7 @@ class DeleteFragment : Fragment() {
         val descTextView: TextView = view.findViewById(R.id.deleteTextView_decrip)
         val dateTextView: TextView = view.findViewById(R.id.deleteTextView_date)
         val timeTextView: TextView = view.findViewById(R.id.deleteTextView_time)
-        val deleteButton: Button = view.findViewById(R.id.editButton)
+        val deleteButton: Button = view.findViewById(R.id.deleteButton)
 
 
         deleteViewModel.selectedLiveData.observe(viewLifecycleOwner, Observer { it?.let{task ->
