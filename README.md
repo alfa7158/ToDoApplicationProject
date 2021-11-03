@@ -44,7 +44,7 @@ https://www.figma.com/file/yXhhWYrj29zlK8dEhAQPWI/Untitled?node-id=0%3A1
 I have chosen when adding a task
 10. As IMT User I want to have emoji that tells me the status of the tasks that I need to do based on the due date
 11. As IMT user I want to to be able to set deadline for my taks
-# Planning amd strategy
+# Planning and strategy
 The day we were givien the project, I remembered the the way I used to mange my tasks when I was studying the university.
 It all started when I started the university and was not able to keep up with work. At this time my sister suggested buying a white board that divides the importance my task. 
 This suggestion helped me succeed and improved my grades significantly. Therefore, I decided to make the IMT app which stands for important-tasks. Some, of the problem that 
