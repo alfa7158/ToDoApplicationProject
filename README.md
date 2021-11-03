@@ -6,7 +6,7 @@ Important-Task(IMT)
 3. android studio
 4. kotlin 
 # Figma
-....
+https://www.figma.com/file/yXhhWYrj29zlK8dEhAQPWI/Untitled?node-id=0%3A1
 # user stories
 1. As IMT User I want to add task and get it sorted base on the importance so that I can mange my importance
 2. As IMT User I want to edit task  so that it can be updated accordingly
