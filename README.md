@@ -40,7 +40,7 @@ https://www.figma.com/file/yXhhWYrj29zlK8dEhAQPWI/Untitled?node-id=0%3A1
 # user stories
 1. As IMT User I want to add task and get it sorted base on the importance so that I can mange my importance
 2. As IMT User I want to edit task  so that it can be updated accordingly
-3. As IMT User I want to Delet task  so that it can be deleted accordingly if no longer needed
+3. As IMT User I want to Delete task  so that it can be deleted accordingly if no longer needed
 4. As IMT User I want to see a check box so that I Can see the tasks that I finished
 6. As IMT User I want to see the due date so that I could mange tasks accordingly
 7. AS IMT User I want to see my tasks filtered with different colors basesed on the Importance
