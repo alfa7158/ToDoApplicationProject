@@ -8,8 +8,8 @@
     tools:context=".fragment.To_do_text_Fragment">
 
     <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="307dp"
+        android:layout_width="409dp"
+        android:layout_height="407dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,6 +23,15 @@
             android:orientation="vertical"
             android:padding="13dp"
             android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/farsan"
+                android:text="Title:"
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/titleTextView"
@@ -39,6 +48,15 @@
                 tools:layout_editor_absoluteY="0dp" />
 
             <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/farsan"
+                android:text="description:"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
                 android:id="@+id/descripTextView"
                 style="@style/Widget.MaterialComponents.Snackbar.TextView"
                 android:layout_width="match_parent"
@@ -49,6 +67,15 @@
                 android:textSize="33dp" />
 
             <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/farsan"
+                android:text="Date:"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
                 android:id="@+id/TextViewDate"
                 style="@style/Widget.MaterialComponents.Snackbar.TextView"
                 android:layout_width="match_parent"
@@ -57,6 +84,15 @@
                 android:text="date"
                 android:textColor="#000000"
                 android:textSize="33dp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/farsan"
+                android:text="Time:"
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/timeTextView"
