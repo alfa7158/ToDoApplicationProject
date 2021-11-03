@@ -5,6 +5,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/**
+ * In this the the date class where we have the Entity and the primaryKey to make sure that
+ * every raw has unique value
+ */
 @Entity
 data class ToDoModel(
 

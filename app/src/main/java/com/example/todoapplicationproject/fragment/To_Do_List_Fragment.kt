@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.activityViewModels
@@ -14,10 +13,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todoapplicationproject.Adapter.ToDoAdapter
 import com.example.todoapplicationproject.R
-import com.example.todoapplicationproject.ViewModels.EditViewModel
 import com.example.todoapplicationproject.ViewModels.ToDoViewModelAdapter
 import com.example.todoapplicationproject.data.ToDoModel
-import com.example.todoapplicationproject.repoistries.TodDoRepoistory
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
@@ -34,6 +31,9 @@ private val toDoTasks = mutableListOf<ToDoModel>()
         return inflater.inflate(R.layout.fragment_to__do__list_, container, false)
     }
 
+    /**
+     * here below, we are sitting the view
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val ListFloatingButton:FloatingActionButton = view.findViewById(R.id.floatingButtonDes)
@@ -42,12 +42,14 @@ private val toDoTasks = mutableListOf<ToDoModel>()
 
         val layout: ConstraintLayout = view.findViewById(R.id.frameLayout3)
         val toDoAdapter = ToDoAdapter(toDoTasks,listVieWModel)
+        // here below we are checking for the user list chose to change the color
+        // of the recycler view
         when(listVieWModel.selectedCategory) {
             "Important" -> layout.setBackgroundResource(R.color.red)
             "Mid-Important" -> layout.setBackgroundResource(R.color.orange)
             "Less-Important" -> layout.setBackgroundResource(R.color.green)
         }
-
+        // here we are giving passing the recyclerView to the adapter
         toDoRecyclerView.adapter = toDoAdapter
         listVieWModel.todoTasks(listVieWModel.selectedCategory).observe(viewLifecycleOwner, Observer { it?.let{
             task ->

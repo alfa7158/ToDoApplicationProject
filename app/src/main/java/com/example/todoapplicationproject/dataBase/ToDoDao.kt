@@ -5,6 +5,15 @@ import androidx.room.*
 import com.example.todoapplicationproject.data.ToDoModel
 import kotlinx.coroutines.selects.select
 
+/**
+ * This the Dao Interface
+ * In this class we have three functions
+ * 1. addToDo,  its job is to insert the task or
+ * todo in the the database
+ * 2. getTodo, its job is to get the added tasks
+ * 3. updateToDo, its job is to update the tasks
+ * 4. deleteToDo, its job is to delete the tasks
+ */
 @Dao
 interface ToDoDao {
 @Insert

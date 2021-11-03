@@ -20,13 +20,20 @@ import com.example.todoapplicationproject.ViewModels.ToDoViewModelAdapter
 import com.example.todoapplicationproject.data.ToDoModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
+/**
+ * This is the add task or todo class. This class job is to add the tasks  and observe it
+ */
+
 
 class Add_todo_Fragment : Fragment() {
+
     private lateinit var selectedTasks: ToDoModel
     private val addViewModel: AddViewModel by activityViewModels()
     private val listViewModel: ToDoViewModelAdapter by activityViewModels()
 
-
+    /**
+     * The function below is to set the fragment view
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,6 +42,9 @@ class Add_todo_Fragment : Fragment() {
 
     }
 
+    /**
+     * In the function below, we are setting the view for the fragment
+     */
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: android.view.View, savedInstanceState: android.os.Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -51,7 +61,9 @@ class Add_todo_Fragment : Fragment() {
         val saveButton:Button = view.findViewById(R.id.save_button)
         val titleEditText:EditText = view.findViewById(R.id.titleEditText)
         val descriptionEditText:EditText = view.findViewById(R.id.decriptionEditText)
-
+        /**
+         * here we are sitting time picker button to take the time
+         */
         mPickTimeBtn.setOnClickListener {
             val cal = Calendar.getInstance()
             val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
@@ -63,12 +75,17 @@ class Add_todo_Fragment : Fragment() {
         }
 
 
-
+        /**
+         * here below, we are taking an instance of the Calender class
+         */
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
-
+        /**
+         * here below, we are picking up the date using datePickerDialog
+         *
+         */
         DatePicker.setOnClickListener {
 
             val dpd = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
@@ -93,7 +110,9 @@ class Add_todo_Fragment : Fragment() {
 //    val date:String,
 //    var category: String,
 //    var time:Double,
-
+        /**
+         * here below, we are sitting the save button and addingToDo tasks
+         */
         saveButton.setOnClickListener(){
             val title = titleEditText.text.toString()
             val  description = descriptionEditText.text.toString()

@@ -21,7 +21,9 @@ import com.example.todoapplicationproject.ViewModels.ToDoViewModelAdapter
 import com.example.todoapplicationproject.data.ToDoModel
 import java.text.SimpleDateFormat
 
-
+/**
+ * This class is to edit(Update) the tasks edited
+ */
 class editFragment : Fragment() {
     private lateinit var selectedTasks: ToDoModel
 
@@ -38,6 +40,9 @@ class editFragment : Fragment() {
 
     @SuppressLint("CutPasteId", "SimpleDateFormat")
     @RequiresApi(Build.VERSION_CODES.N)
+    /**
+     * In the function below, we are sitting the view of delete class
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -50,7 +55,9 @@ class editFragment : Fragment() {
         val mPickTimeBtn = view.findViewById<EditText>(R.id.editEditeText_time)
 
 
-
+        /**
+         * here we are observe selected date
+         */
 
         editViewModel.selectedLiveData.observe(viewLifecycleOwner, Observer { it?.let { task ->
 
@@ -63,7 +70,9 @@ class editFragment : Fragment() {
         }
 
         })
-
+        /**
+         * here we using the edit ImageView as button to edit the tasks
+         */
         editButton.setOnClickListener() {
 
             selectedTasks.title = titleToEdit.text.toString()
@@ -76,7 +85,9 @@ class editFragment : Fragment() {
 
         }
 
-
+        /**
+         * here we are taking an Instance of the Calendar class
+         */
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
@@ -93,6 +104,9 @@ class editFragment : Fragment() {
 
 
         }
+        /**
+         * here we are sitting the time picker Button
+         */
         mPickTimeBtn.setOnClickListener {
             val cal = Calendar.getInstance()
             val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->

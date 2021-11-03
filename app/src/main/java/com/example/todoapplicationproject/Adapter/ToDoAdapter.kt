@@ -1,5 +1,9 @@
 package com.example.todoapplicationproject.Adapter
 
+/**
+ * This is the adapter class for the recyclerView
+ *
+ */
 import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
@@ -17,11 +21,18 @@ import it.emperor.animatedcheckbox.AnimatedCheckBox
 import java.text.SimpleDateFormat
 import java.util.*
 
+/**
+ * This is the adapter class, it a list and view model
+ *
+ */
 class ToDoAdapter(val tasks: List<ToDoModel>,
                   val viewModel:ToDoViewModelAdapter):
     RecyclerView.Adapter<ToDoAdapter.ToDoViewHolder>() {
 
-
+    /**
+     * in the function below, what we are doing is that to get the ids of the view we want
+     * in the in the recyclerView
+     */
     class ToDoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val taskTitle: TextView = view.findViewById(R.id.titleTextView)
         val taskDescription: TextView = view.findViewById(R.id.descripTextView)
@@ -35,6 +46,10 @@ class ToDoAdapter(val tasks: List<ToDoModel>,
 
     }
 
+    /**
+     * In the function below, we are holding the view and its position of the view
+     *
+     */
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onBindViewHolder(holder: ToDoViewHolder, position: Int) {
         val theTasks = tasks[position]
@@ -59,14 +74,17 @@ class ToDoAdapter(val tasks: List<ToDoModel>,
 
         println("I am here" + theTasks.date.toString())
         println("I am here currentDate" + currentDate.toString())
-
+        /**
+         * in the if condition statement below, we are checking  for the due date
+         * by using date() function and the user input theTasks.
+         */
 
         if(theTasks.date.toString().substring(s_taskDate+1).toInt()>currentDate.toString().substring(s_taskDate+1).toInt()){
                        holder.faceImage.setImageResource(R.drawable.img_3)
 
         }else if( theTasks.date.toString().substring(f_current+1,s_taskDate).toInt()>=
             currentDate.toString().substring(f_current+1,s_taskDate).toInt() &&  theTasks.date.toString().substring(s_taskDate+1).toInt()>=
-            currentDate.toString().substring(s_taskDate+1).toInt()){
+            currentDate.toString().substring(s_taskDate+1).toInt() && theTasks.date.substring(0,f_current) >= currentDate.substring(0,f_current)){
                         holder.faceImage.setImageResource(R.drawable.img_3)
 
 
@@ -97,7 +115,9 @@ class ToDoAdapter(val tasks: List<ToDoModel>,
 //
 //        }
 
-
+        /**
+         * below, we are making sure that the checkbox gets updated when ever we click on it
+         */
 
         holder.isDone.setOnClickListener() {
 
@@ -107,12 +127,19 @@ class ToDoAdapter(val tasks: List<ToDoModel>,
 
         }
 
+        /**
+         * here we are sitting the the  edit Image view icon and giving it the posted values
+         */
 
         holder.toEdit.setOnClickListener() {
             viewModel.selectedLiveData.postValue(theTasks)
             it.findNavController().navigate(R.id.action_to_Do_List_Fragment_to_editFragment)
 
         }
+
+        /**
+         * here we are sitting the the  delete Image view icon and giving it the posted values
+         */
         holder.toDelete.setOnClickListener() {
             viewModel.selectedLiveData.postValue(theTasks)
             it.findNavController().navigate(R.id.action_to_Do_List_Fragment_to_deletFragment)

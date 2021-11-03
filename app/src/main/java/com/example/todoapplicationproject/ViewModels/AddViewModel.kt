@@ -12,11 +12,14 @@ class AddViewModel : ViewModel() {
 
     var selectedLiveData = MutableLiveData<ToDoModel>()
 
+    /**
+     * here below we are creating a function that takes the task details value
+     */
     fun addToDO(
         title: String, description: String, isChecked: Boolean, date: String, categories: String,
         time: String
     ) {
-
+        //here we are passing the values to make it work in the background
         viewModelScope.launch {
             todoRepoistory.addTasks(
                 ToDoModel(
