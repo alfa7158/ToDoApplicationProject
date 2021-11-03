@@ -139,7 +139,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
         android:layout_marginEnd="89dp"
+        android:fontFamily="@font/farsan"
         android:text="MultiAutoCompleteTextView"
+        android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
