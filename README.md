@@ -15,7 +15,7 @@ https://www.figma.com/file/yXhhWYrj29zlK8dEhAQPWI/Untitled?node-id=0%3A1
 6. As IMT User I want to see the due date so that I could mange tasks accordingly
 7. AS IMT User I want to see my tasks filtered with different colors basesed on the Importance
 8. As IMT User I want to have three button so that I can get acess to my lists of importance based on the level of importance 
-9. I have chosen when adding a task
+I have chosen when adding a task
 10. As IMT User I want to have emoji that tells me the status of the tasks that I need to do based on the due date
 11. As IMT user I want to to be able to set deadline for my taks
 # Planning amd strategy
