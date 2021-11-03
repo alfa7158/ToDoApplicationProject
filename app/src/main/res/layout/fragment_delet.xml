@@ -110,6 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="228dp"
+        android:backgroundTint="@color/orange"
         android:fontFamily="@font/farsan"
         android:text="Delete"
         android:textSize="33dp"
