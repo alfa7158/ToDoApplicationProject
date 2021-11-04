@@ -12,5 +12,5 @@
         android:layout_height="506dp"
         android:layout_gravity="center"
         android:foregroundGravity="center_vertical"
-        android:src="@drawable/img_2" />
+        android:src="@drawable/img" />
 </FrameLayout>
